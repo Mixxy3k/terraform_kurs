@@ -40,7 +40,7 @@ resource "azurerm_mysql_server" "main" {
 }
 
 # This is the database that our application will use
-resource "azurerm_mysql_database" "main" {
+resource "azurerm_mysql_flexible_server" "main" {
   name                = "${azurerm_resource_group.main.name}_mysql_db"
   resource_group_name = azurerm_resource_group.main.name
   server_name         = azurerm_mysql_server.main.name
